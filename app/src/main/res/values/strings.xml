@@ -4,5 +4,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="robby_darling">Robby Darling</string>
     <string name="view_more">View More</string>
-    <string name="api_url">https://my-json-server.typicode.com/easygautam/data/users</string>
+    <string name="api_url">https://my-json-server.typicode.com/</string>
 </resources>

@@ -1,6 +1,7 @@
 package in.ashwinimohapatra.whassignment.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import in.ashwinimohapatra.whassignment.R;
@@ -20,9 +22,9 @@ import in.ashwinimohapatra.whassignment.model.UserModel;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder>{
 
-    private List<UserModel> um;
+    ArrayList<UserModel> um=new ArrayList<>();
     Context context;
-    public CustomAdapter(List<UserModel> um,Context context) {
+    public CustomAdapter(ArrayList<UserModel> um,Context context) {
         this.um = um;
         this.context=context;
     }
@@ -30,16 +32,25 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     @NonNull
     @Override
     public CustomAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
+        View view = LayoutInflater.from(context)
                 .inflate(R.layout.recycle_layout, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CustomAdapter.ViewHolder holder, int position) {
+        Log.i("Check 1",um.get(position).getName());
         holder.name.setText(um.get(position).getName());
-        holder.qualification.setText(um.get(position).getQualifications().get(0));
-        holder.subjects.setText(um.get(position).getSubjects().get(position));
+//        String qual="";
+//        for(int i=0;i<um.get(position).getQualifications().size();i++){
+//            qual=qual+" "+um.get(position).getQualifications().get(i);
+//        }
+//        holder.qualification.setText(qual);
+//        String subj="";
+//        for(int j=0;j<um.get(position).getSubjects().size();j++){
+//            subj=subj+" "+um.get(position).getSubjects().get(j);
+//        }
+//        holder.subjects.setText(subj);
         Glide.with(context).load(um.get(position).getProfileImage()).into(holder.profileImage);
     }
 
@@ -51,53 +62,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView name,subjects,qualification;
         private ImageView profileImage;
-        private Button viewMore;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            name = (TextView) itemView.findViewById(R.id.textView5);
-            subjects = (TextView) itemView.findViewById(R.id.textView6);
-            qualification = (TextView) itemView.findViewById(R.id.textView7);
-            profileImage = (ImageView) itemView.findViewById(R.id.imageView2);
-        }
-
-        public TextView getName() {
-            return name;
-        }
-
-        public void setName(TextView name) {
-            this.name = name;
-        }
-
-        public TextView getSubjects() {
-            return subjects;
-        }
-
-        public void setSubjects(TextView subjects) {
-            this.subjects = subjects;
-        }
-
-        public TextView getQualification() {
-            return qualification;
-        }
-
-        public void setQualification(TextView qualification) {
-            this.qualification = qualification;
-        }
-
-        public ImageView getProfileImage() {
-            return profileImage;
-        }
-
-        public void setProfileImage(ImageView profileImage) {
-            this.profileImage = profileImage;
-        }
-
-        public Button getViewMore() {
-            return viewMore;
-        }
-
-        public void setViewMore(Button viewMore) {
-            this.viewMore = viewMore;
+            name = itemView.findViewById(R.id.textView5);
+            subjects = itemView.findViewById(R.id.textView6);
+            qualification = itemView.findViewById(R.id.textView7);
+            profileImage = itemView.findViewById(R.id.imageView2);
         }
     }
 }
