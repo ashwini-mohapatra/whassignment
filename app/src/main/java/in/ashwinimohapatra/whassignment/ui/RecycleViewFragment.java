@@ -1,5 +1,6 @@
 package in.ashwinimohapatra.whassignment.ui;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,7 +17,6 @@ import java.util.ArrayList;
 import in.ashwinimohapatra.whassignment.R;
 import in.ashwinimohapatra.whassignment.adapter.CustomAdapter;
 import in.ashwinimohapatra.whassignment.model.UserModel;
-import in.ashwinimohapatra.whassignment.restclient.HttpsTrustManager;
 import in.ashwinimohapatra.whassignment.restclient.RestClient;
 import in.ashwinimohapatra.whassignment.restclient.RestEndpoint;
 import retrofit2.Call;
@@ -33,11 +33,11 @@ public class RecycleViewFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_recycle_view, container, false);
-        HttpsTrustManager.allowAllSSL();
         RecyclerView recyclerView = view.findViewById(R.id.recycle);
         RestEndpoint restEndpoint= RestClient.getClient(view.getContext()).create(RestEndpoint.class);
         Call<ArrayList<UserModel>> clum = restEndpoint.getUserData();
         clum.enqueue(new Callback<ArrayList<UserModel>>() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onResponse(Call<ArrayList<UserModel>> call, Response<ArrayList<UserModel>> response) {
                 for(int i=0;i<response.body().size();i++){

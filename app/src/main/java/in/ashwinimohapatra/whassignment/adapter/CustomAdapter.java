@@ -15,7 +15,7 @@ import in.ashwinimohapatra.whassignment.model.UserModel;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder>{
 
-    ArrayList<UserModel> um=new ArrayList<>();
+    ArrayList<UserModel> um;
     Context context;
 
     public CustomAdapter(ArrayList<UserModel> um,Context context) {

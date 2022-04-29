@@ -1,10 +1,8 @@
 package in.ashwinimohapatra.whassignment;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.os.Bundle;
-import android.widget.FrameLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import in.ashwinimohapatra.whassignment.ui.RecycleViewFragment;
 
