@@ -61,26 +61,4 @@ public class RecycleViewFragment extends Fragment {
         recyclerView.setAdapter(customAdapter);
         return view;
     }
-
-    public ArrayList<UserModel> getUserData(){
-        RestEndpoint restEndpoint= RestClient.getClient(getContext()).create(RestEndpoint.class);
-        ArrayList<UserModel> lum1=new ArrayList<>();
-        Call<ArrayList<UserModel>> clum = restEndpoint.getUserData();
-        clum.enqueue(new Callback<ArrayList<UserModel>>() {
-            @Override
-            public void onResponse(Call<ArrayList<UserModel>> call, Response<ArrayList<UserModel>> response) {
-                for(int i=0;i<response.body().size();i++){
-                    lum1.add(response.body().get(i));
-                    Log.i("Check","Check "+i);
-                    Log.i("Check",lum1.toString());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ArrayList<UserModel>> call, Throwable t) {
-                Toast.makeText(getContext(),"Failed Fetching Data",Toast.LENGTH_LONG).show();
-            }
-        });
-        return lum1;
-    }
 }

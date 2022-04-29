@@ -1,20 +1,18 @@
 package in.ashwinimohapatra.whassignment.model;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class UserModel {
     int id;
     String name;
     ArrayList<String> subjects;
-    ArrayList<String> qualifications;
+    ArrayList<String> qualification;
     String profileImage;
 
-    public UserModel(int id, String name, ArrayList<String> subjects, ArrayList<String> qualifications, String profileImage) {
+    public UserModel(int id, String name, ArrayList<String> subjects, ArrayList<String> qualification, String profileImage) {
         this.id = id;
         this.name = name;
         this.subjects = subjects;
-        this.qualifications = qualifications;
+        this.qualification = qualification;
         this.profileImage = profileImage;
     }
 
@@ -42,12 +40,12 @@ public class UserModel {
         this.subjects = subjects;
     }
 
-    public ArrayList<String> getQualifications() {
-        return qualifications;
+    public ArrayList<String> getQualification() {
+        return qualification;
     }
 
-    public void setQualifications(ArrayList<String> qualifications) {
-        this.qualifications = qualifications;
+    public void setQualification(ArrayList<String> qualification) {
+        this.qualification = qualification;
     }
 
     public String getProfileImage() {

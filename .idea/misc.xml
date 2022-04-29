@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/AM1742/whassignment/app/src/main/res/drawable/back_gra.xml" value="0.1" />
+        <entry key="..\:/Users/AM1742/whassignment/app/src/main/res/drawable/ic_baseline_brightness_1_24.xml" value="0.1" />
         <entry key="..\:/Users/AM1742/whassignment/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/AM1742/whassignment/app/src/main/res/layout/fragment_recycle_view.xml" value="0.1" />
-        <entry key="..\:/Users/AM1742/whassignment/app/src/main/res/layout/recycle_layout.xml" value="0.22" />
+        <entry key="..\:/Users/AM1742/whassignment/app/src/main/res/layout/recycle_layout.xml" value="0.33" />
         <entry key="..\:/Users/AM1742/whassignment/app/src/main/res/layout/top_bar.xml" value="0.1" />
         <entry key="..\:/Users/AM1742/whassignment/app/src/main/res/xml/network_resource_config.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/back_gra.xml" value="0.1535" />
